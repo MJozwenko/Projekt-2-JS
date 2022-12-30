@@ -25,7 +25,7 @@ function loadData() {
         finalResult = currencies.rates[5].ask * input.value;
       }
       spinner.setAttribute("hidden", "");
-      result.innerHTML = finalResult.toFixed(2) + " " + currency;
+      result.innerHTML = finalResult + " " + currency;
     })
     .catch((err) => console.log(err));
 }
