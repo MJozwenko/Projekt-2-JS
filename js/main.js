@@ -19,7 +19,7 @@ fetch("https://api.nbp.pl/api/exchangerates/tables/c/")
       } else {
         finalResult = currencies.rates[5].ask * input.value;
       }
-      result.innerHTML = finalResult.toFixed(2) + currency;
+      result.innerHTML = finalResult.toFixed(2) + " " + currency;
     });
   })
   .catch((err) => console.log(err));
