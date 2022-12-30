@@ -78,20 +78,15 @@ p {
 }
 
 #spinner:not([hidden]) {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  padding-top: 10px;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 #spinner::after {
   content: "";
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   border: 9px solid #f3f3f3;
   border-top: 10px solid #6b9080;
   border-radius: 100%;
