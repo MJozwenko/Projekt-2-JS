@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Przelicznik walut</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="conventer">
+      <div class="logos">
+        <div class="logo">
+          <i
+            class="fa-sharp fa-solid fa-money-bill-transfer fa-8x fa-flip"
+            style="--fa-animation-duration: 5s"
+          ></i>
+        </div>
+        <div class="title">Przelicznik walut</div>
+      </div>
+      <div class="content">
+        <input id="input" placeholder="Podaj wartość" type="number" />
+        <select id="select">
+          <option class="option" value="EUR">EUR</option>
+          <option class="option" value="USD">USD</option>
+          <option class="option" value="CHF">CHF</option>
+        </select>
+        <button class="btn">Przelicz</button>
+        <p>TO</p>
+        <span class="result">0 PLN</span>
+      </div>
+    </div>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
