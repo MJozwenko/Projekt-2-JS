@@ -1,5 +1,5 @@
 let finalResult = 0;
-currency = "PLN";
+const currency = "PLN";
 
 const input = document.querySelector("input");
 const select = document.getElementById("select");
@@ -14,18 +14,24 @@ function loadData() {
   fetch("https://api.nbp.pl/api/exchangerates/tables/c/")
     .then((data) => data.json())
     .then((data) => {
-      currencies = data[0];
-      console.log(currencies);
+      const currencies = data[0];
 
       if (select.value === "EUR") {
-        finalResult = currencies.rates[3].ask * input.value;
+        let index = currencies.rates.findIndex((rates) => rates.code === "EUR");
+        finalResult = currencies.rates[index].ask * input.value;
+        //finalResult = currencies.rates[3].ask * input.value;
       } else if (select.value === "USD") {
-        finalResult = currencies.rates[0].ask * input.value;
+        let index = currencies.rates.findIndex((rates) => rates.code === "USD");
+        finalResult = currencies.rates[index].ask * input.value;
       } else {
-        finalResult = currencies.rates[5].ask * input.value;
+        let index = currencies.rates.findIndex((rates) => rates.code === "CHF");
+        finalResult = currencies.rates[index].ask * input.value;
       }
-      spinner.setAttribute("hidden", "");
+
       result.innerHTML = `${finalResult.toFixed(2)}  ${currency}`;
     })
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err))
+    .finally(() => {
+      spinner.setAttribute("hidden", "");
+    });
 }
