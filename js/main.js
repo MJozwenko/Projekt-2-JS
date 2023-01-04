@@ -17,13 +17,13 @@ function loadData() {
       const currencies = data[0];
 
       if (select.value === "EUR") {
-        index = currencies.rates.findIndex((rates) => rates.code === "EUR");
+        let index = currencies.rates.findIndex((rates) => rates.code === "EUR");
         finalResult = currencies.rates[index].ask * input.value;
       } else if (select.value === "USD") {
-        index = currencies.rates.findIndex((rates) => rates.code === "USD");
+        let index = currencies.rates.findIndex((rates) => rates.code === "USD");
         finalResult = currencies.rates[index].ask * input.value;
       } else {
-        index = currencies.rates.findIndex((rates) => rates.code === "CHF");
+        let index = currencies.rates.findIndex((rates) => rates.code === "CHF");
         finalResult = currencies.rates[index].ask * input.value;
       }
 
