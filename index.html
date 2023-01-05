@@ -29,7 +29,13 @@
         <div class="title">Przelicznik walut</div>
       </div>
       <div class="content">
-        <input id="input" placeholder="Podaj wartość" type="number" />
+        <input
+          id="input"
+          placeholder="Podaj wartość"
+          type="number"
+          min="0"
+          oninput="validity.valid||(value='');"
+        />
         <select id="select">
           <option class="option" value="EUR">EUR</option>
           <option class="option" value="USD">USD</option>

@@ -16,16 +16,10 @@ function loadData() {
     .then((data) => {
       const currencies = data[0];
 
-      if (select.value === "EUR") {
-        let index = currencies.rates.findIndex((rates) => rates.code === "EUR");
-        finalResult = currencies.rates[index].ask * input.value;
-      } else if (select.value === "USD") {
-        let index = currencies.rates.findIndex((rates) => rates.code === "USD");
-        finalResult = currencies.rates[index].ask * input.value;
-      } else {
-        let index = currencies.rates.findIndex((rates) => rates.code === "CHF");
-        finalResult = currencies.rates[index].ask * input.value;
-      }
+      const index = currencies.rates.findIndex(
+        (rates) => rates.code === select.value
+      );
+      finalResult = currencies.rates[index].ask * input.value;
 
       result.innerHTML = `${finalResult.toFixed(2)}  ${currency}`;
     })
